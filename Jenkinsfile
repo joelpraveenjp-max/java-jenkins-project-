@@ -15,7 +15,12 @@ pipeline {
 
         stage('Run') {
             steps {
-                sh 'nohup java -jar target/java-jenkins-app-1.0.jar > app.log 2>&1 &'
+                sh '''
+                    pkill -f "java -jar" || true
+                    nohup java -jar target/java-jenkins-app-1.0.jar > app.log 2>&1 &
+                    sleep 10
+                    cat app.log
+                '''
             }
         }
     }
