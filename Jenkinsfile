@@ -15,7 +15,7 @@ pipeline {
 
         stage('Run') {
             steps {
-                sh 'java -cp target/java-jenkins-app-1.0.jar com.example.Main'
+                sh 'nohup java -jar target/java-jenkins-app-1.0.jar > app.log 2>&1 &'
             }
         }
     }
