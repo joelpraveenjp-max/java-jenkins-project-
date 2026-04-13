@@ -15,6 +15,6 @@ public class Main {
 
     @GetMapping("/")
     public String home() {
-        return "Java is Running";
+        return "Welcome Joel Java Works";
     }
 }
